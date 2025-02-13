@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded",(e)=>{
         user.parent_target.classList.add("appear-modal")
     })
 
-
+ 
     user.btn_closed.addEventListener("click",(e)=>{
         e.stopPropagation()
         user.parent_target.classList.remove("appear-modal")
@@ -31,8 +31,5 @@ document.addEventListener("DOMContentLoaded",(e)=>{
     user.modal.addEventListener("click",(e)=>{
         e.stopPropagation()
     })
-
-
-
 
 })
