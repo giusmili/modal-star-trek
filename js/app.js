@@ -1,27 +1,23 @@
 import { user } from './model.js';
 
-document.addEventListener("DOMContentLoaded", e => {
-    e.preventDefault();
+document.addEventListener("DOMContentLoaded", () => {
 
-    user.btn_open.addEventListener("click", e => {
-        e.stopPropagation();
-        user.parent_target.classList.add("appear-modal");
-    });
+    const closeModal = () => user.parentTarget.classList.remove("appear-modal");
 
-    user.btn_closed.addEventListener("click", e => {
+    user.btnOpen.addEventListener("click", e => {
         e.stopPropagation();
-        user.parent_target.classList.remove("appear-modal");
+        user.parentTarget.classList.add("appear-modal");
     });
 
-    user.closed.addEventListener("click", e => {
-        e.stopPropagation();
-        user.parent_target.classList.remove("appear-modal");
+    [user.btnClosed, user.closed].forEach(element => {
+        element.addEventListener("click", e => {
+            e.stopPropagation();
+            closeModal();
+        });
     });
 
-    document.addEventListener("click", () => {
-        user.parent_target.classList.remove("appear-modal");
-    });
-    user.modal.addEventListener("click", e => {
-        e.stopPropagation();
-    });
+    // clique en dehors
+    document.addEventListener("click", closeModal);
+
+    user.modal.addEventListener("click", e => e.stopPropagation());
 });
