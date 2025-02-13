@@ -1,13 +1,7 @@
+import { user } from './model.js';
+
 document.addEventListener("DOMContentLoaded", e => {
     e.preventDefault();
-
-    const user = {
-        btn_open: document.querySelector(".btn-open"),
-        btn_closed: document.querySelector(".btn-closed"),
-        closed: document.querySelector(".closed"), // cross
-        parent_target: document.querySelector(".modal-parent"),
-        modal: document.querySelector("figure")
-    };
 
     user.btn_open.addEventListener("click", e => {
         e.stopPropagation();
