@@ -55,14 +55,14 @@ header h1 a{
     width: 100vw;
     background-color: rgba(11, 8, 8, 0.3);
     z-index: -1;
-    backdrop-filter: blur(.3rem);
+    /* backdrop-filter: blur(.3rem); */
     opacity: 0;
     /* transition */
     transition: all .6s ease-in-out;
 
 }
 /* appear modal */
-.appear-modal:target{
+.appear-modal{
     opacity: 1;
     z-index: 1;
 }
